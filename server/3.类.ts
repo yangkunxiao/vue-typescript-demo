@@ -95,12 +95,12 @@ class WorkFlow {
     }
 }
 
-class MyFlow extends WorkFlow {
-    next(){
-        return this
-    }
-}
+// class MyFlow extends WorkFlow {
+//     next(){
+//         return this
+//     }
+// }
 
-let myFlow = new MyFlow()
+// let myFlow = new MyFlow()
 
-myFlow.next().step1().next().step2().step1().step2()
+// myFlow.next().step1().next().step2().step1().step2() 

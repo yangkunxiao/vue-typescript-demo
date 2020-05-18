@@ -4,7 +4,7 @@ let decLiteral: number = 10
 let hexLiteral: number = 0x1000
 
 function foo(): void {
-	console.log('我没有返回值')
+	console.log('我没有返回值！!!')
 }
 
 //声明一个void类型 只能将它只为undefined null
@@ -56,8 +56,8 @@ enum Days2 {
 	Wed,
 	Thu,
 	Fri,
-	Sat,
-}
+	Sat, 
+} 
 console.log(Days2['Sun']);
 console.log(Days2['Mon']);
 console.log(Days2['Tue']);

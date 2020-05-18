@@ -1,0 +1,34 @@
+{
+    "env": {
+        "node": true,
+        "es6": true,
+        "browser": true,
+    },
+    "globals": {},
+    "compilerOptions": {
+        "outDir": "../output",
+        "sourceMap": true,
+        "strict": true,
+        "module": "commonjs",
+        "target": "es5",
+        "moduleResolution": "node",
+        "allowSyntheticDefaultImports": true,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "noImplicitAny": false,
+        "noImplicitThis": true,
+        "importHelpers": true,
+        "listFiles": true,
+        "removeComments": true,
+        "allowJs": true,
+        "baseUrl": "./"
+    },
+    "lib": [
+        "es2015",
+        "es2015.promise"
+      ],
+    "compileOnSave": false,
+    "exclude": [
+        "node_modules"
+    ]
+}
