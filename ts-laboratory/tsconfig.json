@@ -2,13 +2,13 @@
     "env": {
         "node": true,
         "es6": true,
-        "browser": true
+        "browser": true,
     },
     "globals": {},
     "compilerOptions": {
         "module": "commonjs",
         "jsx": "react",
-        "types": ["node"],
+        // "types": ["node"],
         "target": "ES6",
         "lib": [
             "es6",
@@ -21,7 +21,7 @@
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
         "moduleResolution": "node",
-        "noUnusedLocals": true
+        // "noUnusedLocals": true
     },
     "compileOnSave": false,
     "exclude": [
