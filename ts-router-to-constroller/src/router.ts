@@ -38,7 +38,7 @@ export default (app: Router) => {
 	for (let methodName in user) {
 		let method = user[methodName]
 		if (typeof method !== 'function') break
-		// 反射得到挂载的数据
+		// 得到注解的数据
 		let httpMethod = Reflect.getMetadata(
 			symbolHttpMethodsKey,
 			user,
@@ -46,7 +46,8 @@ export default (app: Router) => {
 		)
 		let path = Reflect.getMetadata(symbolPathKey, user, methodName)
 
-		// app.get('/', () => any)
+        // app.get('/', () => any)
+        //在app实例挂载路由和对应的回调函数
 		app[httpMethod](path, method)
 	}
 }

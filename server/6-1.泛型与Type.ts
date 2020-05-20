@@ -31,25 +31,25 @@ interface User {
 //     (name:string,age:number): void
 // }
 
-// type SetUser = {
-//     (name:string,age:number):void
-// }
+type SetUser = {
+    (name:string,age:number):void
+}
 
-// const fn:SetUser = function(name:string,age:number){
-//     console.log(name,age)
-// }
+const fn:SetUser = function(name:string,age:number){
+    console.log(name,age)
+}
 
-// fn('kaka',25)
+fn('kaka',25)
 
 
 //相同点2
-// interface Sex {
-//     sex:string
-// }
+interface Sex {
+    sex:string
+}
 
-// interface BSex extends Sex {
-//     age:number
-// }
+interface BSex extends Sex {
+    age:number
+}
 
 // type Sex = {
 //     sex:string

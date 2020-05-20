@@ -4,8 +4,8 @@
  * 简单来说，装饰器就是对代码的描述
  *
  */
-// import 'reflect-metadata';
-/* 
+import 'reflect-metadata';
+
 var validate = function(){
     return function (
         target: any,
@@ -49,10 +49,10 @@ let user = new User('kaka', 25)
 
 user.changeName('');
 
-console.log(user.name) */
+console.log(user.name)
 
 //类装饰器 重写类的构造函数
-/* 
+
 const A  = function(){
     return function(constructor){
         console.log(constructor);
@@ -71,7 +71,7 @@ class B {
 
 let b = new B('kaka');
 
-console.log(b.name) */
+console.log(b.name)
 
 
 //方法装饰器
@@ -81,7 +81,7 @@ console.log(b.name) */
  * descriptor：成员的属性描述符。
  *  {value: any, writable: boolean, enumerable: boolean, configurable: boolean}
  */
-/* function C(){
+function C(){
     return function (target:any,targetKey:string,descriptor:PropertyDescriptor){
         console.log('🍎：',target)
         console.log('🍎：',targetKey)
@@ -109,13 +109,13 @@ let d = new D('kaka');
 
 console.log(d.getName())
 
-D.getAge() */
+D.getAge()
 
 
 //访问器修饰符  同方法修饰器 只是用于访问器上
 //不同点就是修饰符使用的是 访问器修饰符 
 //{get: function, set: function, enumerable: boolean, configurable: boolean}
-/* function E(){
+function E(){
     return function(target:any,targetKey:string,descriptor:PropertyDescriptor){
         console.log('🍎：',target)
         console.log('🍎：',targetKey)
@@ -134,7 +134,7 @@ class F {
 
 let f = new F();
 
-console.log(f.name) */
+console.log(f.name)
 
 
 /**
@@ -144,7 +144,7 @@ console.log(f.name) */
  *  targetKey: 成员名称
 */
 
-/* function G(){
+function G(){
     return function(target:any,targetKey:string){
         console.log('🍎：',target)
         console.log('🍎：',targetKey)
@@ -166,7 +166,7 @@ class H {
 
 let h = new H('kaka');
 
-console.log(h.name) */
+console.log(h.name)
 
 
 /**
@@ -177,7 +177,7 @@ console.log(h.name) */
  *  - parameterIndex : 参数在函数参数中的索引
 */
 
-/* function I(){
+function I(){
     return function(target:any,targetKey:string,parameterIndex:number){
         console.log('🍎：',target)
         console.log('🍎：',targetKey)
@@ -195,7 +195,7 @@ class J {
     }
 }
 
-let j = new J('kaka'); */
+let j = new J('kaka');
 
 
 //
@@ -205,7 +205,7 @@ import 'reflect-metadata';
 const requiredKey = Symbol.for("required:key");
 
 //定制一个参数装饰器
-/* var required = function(){
+var required = function(){
     console.log('参数装饰器1')
     return function(target:any,targetKey:string,index:number){
         console.log('参数装饰器2')
@@ -254,7 +254,7 @@ class User {
 }
 
 let u = new User('kaka',25);
-u.setName('hudie') */
+u.setName('hudie')
 
 
 /**

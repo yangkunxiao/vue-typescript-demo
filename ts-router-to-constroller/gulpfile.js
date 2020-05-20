@@ -1,18 +1,13 @@
 const { src,dest,watch,series,task } = require('gulp')
 const del = require('del');
-const ts = require('gulp-typescript');
 const nodemon = require('gulp-nodemon');
 const livereload = require('gulp-livereload');  
+const ts = require('gulp-typescript');
+const tsProject = ts.createProject("tsconfig.json");
 
 function clean(cb){
     return del(['dist'],cb)
 }
-
-// function toJS(){
-//     return src('src/**/*.ts')
-//         .pipe(tsProject())
-//         .pipe(dest('output'))
-// }
 
 function server(){
     nodemon({
@@ -27,28 +22,19 @@ function server(){
     });
 }
 
-// const build = series(clean,toJS);
-// task('build',build)
-
-// exports.build = build;
-// exports.default = createServer
-
-const gulp = require("gulp");
-const tsProject = ts.createProject("tsconfig.json");
-
 function build(){
     return watch('src/**/*.ts',{ events:'all',delay:500,ignoreInitial:false },function(){
         return src('src/**/*.ts')
         .pipe(tsProject())
-        .pipe(gulp.dest("dist"))
+        .pipe(dest("dist"))
     })
 }
 
-// 当客户端被监听的文件改变时，刷新浏览器  
+//当客户端被监听的文件改变时，刷新浏览器  
 function reload() {  
     livereload.listen();  
     var server = livereload();  
-    return gulp.watch('src/**/*.js', function(event) {  
+    return watch('src/**/*.js', function(event) {  
         // server.changed(event.path); 
         livereload.changed(event.path); 
     });  

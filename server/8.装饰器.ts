@@ -1,17 +1,17 @@
-// function seald (constructor:Function){
-//     console.log(constructor)
-//     return class extends constructor {
+function seald (constructor:Function){
+    console.log(constructor)
+    return class extends constructor {
 
-//     }
-// }
+    }
+}
 
-// @seald
-// class People {
-//     public name:string;
-//     constructor(name:string){
-//         this.name = name
-//     }
-// }
+@seald
+class People {
+    public name:string;
+    constructor(name:string){
+        this.name = name
+    }
+}
 
 /**
  * https://www.npmjs.com/package/reflect-metadata

@@ -4,83 +4,83 @@
 
 
 //抽象类 子类必须实现抽象类中的抽象方法
-// abstract class Person {
-//     public name:string = 'kaka';
-//     private weight:number = 25;
-//     protected sex:string = '男';
+abstract class Person {
+    public name:string = 'kaka';
+    private weight:number = 25;
+    protected sex:string = '男';
 
-//     abstract makeSound():void;
+    abstract makeSound():void;
 
-//     move(distance:number):void {
-//         console.log(this.name + '已经前进了：' + distance + '步')
-//     }
-// }
+    move(distance:number):void {
+        console.log(this.name + '已经前进了：' + distance + '步')
+    }
+}
 
-// class Boy extends Person {
-//     constructor(name,weight,sex){
-//         super();
-//         this.name = name;
-//         // this.weight = weight
-//         this.sex = sex
-//     }
+class Boy extends Person {
+    constructor(name,weight,sex){
+        super();
+        this.name = name;
+        // this.weight = weight
+        this.sex = sex
+    }
 
-//     makeSound(){
-//         console.log('makeSound')
-//     }
+    makeSound(){
+        console.log('makeSound')
+    }
 
-// }
+}
 
-// let tom = new Boy('tom',100,25);
+let tom = new Boy('tom',100,25);
 
-// tom.makeSound();
+tom.makeSound();
 
-// tom.move(100)
-
-
-
-// abstract class Animal {
-//     eat(food:string):void {
-//         console.log('eat:' + food)
-//     }
-//     abstract sleep():void
-// }
+tom.move(100)
 
 
-// class Dog extends Animal {
-//     public name:string;
 
-//     constructor(name:string){
-//         super();
-//         this.name = name
-//     }
+abstract class Animal {
+    eat(food:string):void {
+        console.log('eat:' + food)
+    }
+    abstract sleep():void
+}
 
-//     run(){}
 
-//     sleep(){
-//         console.log('Dog sleep')
-//     }
+class Dog extends Animal {
+    public name:string;
 
-//     private pri(){}
+    constructor(name:string){
+        super();
+        this.name = name
+    }
 
-//     protected pro(){}
+    run(){}
 
-//     readonly legs:number = 4
+    sleep(){
+        console.log('Dog sleep')
+    }
 
-//     static food:string = 'bones'
+    private pri(){}
+
+    protected pro(){}
+
+    readonly legs:number = 4
+
+    static food:string = 'bones'
     
-// }
+}
 
-// let dog = new Dog('wangcai');
+let dog = new Dog('wangcai');
 
-// // dog.pri()
+// dog.pri()
 
-// // dog.pro()
+// dog.pro()
 
-// // console.log(dog.food)
+// console.log(dog.food)
 
-// console.log(Dog.food)
+console.log(Dog.food)
 
-// dog.eat('🍌')
+dog.eat('🍌')
 
 
 class WorkFlow {
@@ -95,12 +95,12 @@ class WorkFlow {
     }
 }
 
-// class MyFlow extends WorkFlow {
-//     next(){
-//         return this
-//     }
-// }
+class MyFlow extends WorkFlow {
+    next(){
+        return this
+    }
+}
 
-// let myFlow = new MyFlow()
+let myFlow = new MyFlow()
 
-// myFlow.next().step1().next().step2().step1().step2() 
+myFlow.next().step1().next().step2().step1().step2() 
