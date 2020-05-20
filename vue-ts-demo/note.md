@@ -75,4 +75,19 @@ declare module "*.vue" {
 
 意思是告诉 TypeScript *.vue 后缀的文件可以交给 vue 模块来处理。
 
-而在代码中导入 *.vue 文件的时候，需要写上 .vue 后缀。原因还是因为 TypeScript 默认只识别 *.ts 文件，不识别 *.vue 文件：
+而在代码中导入 *.vue 文件的时候，需要写上 .vue 后缀。原因还是因为 TypeScript 默认只识别 *.ts 文件，不识别 *.vue 文件
+
+ vuex-ts-decorators: 使用该插件可以让我们在vuex中使用装饰器编写vuex，由于 vuex-ts-decorators 提供的包是未经编译的 *.ts 代码，如果你排除了 node_modules 的编译，则需要在 ts-loader 中单独加上对它的编译：
+
+ ```javascript
+  {
+    test: /\.ts$/,
+    loader: 'ts-loader',
+    // 加上对 vuex-ts-decorators 这个包的编译
+    exclude: [/node_modules/, /node_modules\/(?!vuex-ts-decorators)/],
+    options: {
+      appendTsSuffixTo: [/\.vue$/],
+    }
+  },
+
+ ```

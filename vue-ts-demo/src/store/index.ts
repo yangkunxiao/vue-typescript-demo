@@ -13,24 +13,7 @@ const store = new Vuex.Store({
 		demo: {
 			// 带命名空间
             namespaced: true,
-            state:demo.state,
-            mutations:demo.mutations,
-            actions:demo.actions,
-            getters:demo.getters,
-			// state: {
-			// 	count: 0,
-			// },
-			// mutations: {
-			// 	increment(state, n?: number) {
-			// 		if (n != null) state.count = n
-			// 		else state.count++
-			// 	},
-			// },
-			// actions: {
-			// 	increment({ commit }) {
-			// 		commit('increment')
-			// 	},
-			// },
+            ...demo
 		},
 	}
 })

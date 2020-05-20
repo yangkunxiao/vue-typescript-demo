@@ -1,19 +1,42 @@
-const state = {
-    count:0
+export interface UserInfo {
+    name:string,
+    age:number,
+    sex?:string
 }
 
-type typeValue = {
-    value:number
+export interface TodoList {
+    label:string
+    value:string
 }
+
+export interface State {
+    count:number,
+    userInfo:UserInfo,
+    todoList:TodoList
+}
+
+const state:State = {
+    count:0,
+    userInfo:{
+        name:'kaka',
+        age:25,
+        sex:'boy'
+    },
+    todoList:{
+        label:'明日计划',
+        value:'凤凰古城'
+    }
+}
+
 
 const mutations = {
-    increment(state,payload:typeValue){
+    increment(state,payload){
         state.count += payload.value
     }
 }
 
 const actions = {
-    increment({ commit },payload:typeValue){
+    increment({ commit },payload){
         commit('increment',payload)
     }
 }
